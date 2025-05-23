@@ -13,8 +13,8 @@ import router from "./router";
 
   app.use(createPinia());
 
-  const authStore = useAuthStore();
-  await authStore.getSession();
+  // const authStore = useAuthStore();
+  // await authStore.getSession();
 
   app.use(router);
   app.mount("#app");
