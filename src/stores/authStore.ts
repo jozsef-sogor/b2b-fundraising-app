@@ -35,7 +35,7 @@ export const useAuthStore = defineStore("auth", () => {
     accessLevel.value = await getAccessLevelByUserId(userId) ?? 0;
   }
 
-  const handleOnSessionChange = async () => {
+  const handleOnSessionChange = () => {
     return supabase.auth.onAuthStateChange(async (_, _session) => {
       session.value = _session;
 
