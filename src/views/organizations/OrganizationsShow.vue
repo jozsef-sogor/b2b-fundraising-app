@@ -1,0 +1,1 @@
+<template>organizations show</template>
