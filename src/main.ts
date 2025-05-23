@@ -15,7 +15,7 @@ import router from "./router";
 
   const authStore = useAuthStore();
   await authStore.getSession();
-  await authStore.handleOnSessionChange();
+  authStore.handleOnSessionChange();
 
   app.use(router);
   app.mount("#app");
