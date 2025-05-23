@@ -7,14 +7,17 @@ import "./index.css";
 import App from "./App.vue";
 import router from "./router";
 
-const app = createApp(App);
+async function bootstrap() {
+  const app = createApp(App);
 
-app.use(createPinia());
+  app.use(createPinia());
 
-const authStore = useAuthStore();
-await authStore.getSession();
-await authStore.handleOnSessionChange();
+  const authStore = useAuthStore();
+  await authStore.getSession();
+  await authStore.handleOnSessionChange();
 
-app.use(router);
+  app.use(router);
+  app.mount("#app");
+}
 
-app.mount("#app");
+bootstrap();
