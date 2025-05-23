@@ -7,7 +7,8 @@ import "./index.css";
 import App from "./App.vue";
 import router from "./router";
 
-async function bootstrap() {
+// Avoid issues when deployed to Netlify
+(async () => {
   const app = createApp(App);
 
   app.use(createPinia());
@@ -18,6 +19,4 @@ async function bootstrap() {
 
   app.use(router);
   app.mount("#app");
-}
-
-bootstrap();
+})();
