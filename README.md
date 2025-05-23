@@ -1,45 +1,38 @@
-# b2b-fundraising-app
+# Fundraiser Platform
 
-This template should help get you started developing with Vue 3 in Vite.
+A modern Vue 3 fundraising platform built with Vite, Pinia, Supabase, and shadcn-vue components.
 
-## Recommended IDE Setup
+## 🚀 Features
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- Campaign creation and approval workflow
+- Donation functionality
+- Admin dashboard
+- Categories and organizations management
+- Responsive design with Tailwind CSS and shadcn-vue
+- Supabase as backend (auth + database + storage)
 
-## Type Support for `.vue` Imports in TS
+## 🛠️ Getting Started
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+### 1. Install dependencies
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
+```bash
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### 2. Configure environment variables
 
-```sh
+Create a .env file in the root of the project and add the following variables, the values are provided in the email and the PDF:
+
+```env
+VITE_SUPABASE_URL=your-supabase-url
+VITE_SUPABASE_ANON_KEY=your-supabase-anon-key
+VITE_H_CAPTCHA_SITE_KEY=captcha-key
+```
+
+### 4. Run the app
+
+```bash
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+The app will be available at http://localhost:5173.
