@@ -11,7 +11,7 @@ import {
   type SidebarProps,
   SidebarRail,
 } from "@/components/ui/sidebar";
-import { Separator } from "@components/ui/separator";
+import { Separator } from "@/components/ui/separator";
 import NavUser from "@/components/nav/NavUser.vue";
 import { useRoute, useRouter } from "vue-router";
 import { useAuthStore } from "@/stores/authStore";

@@ -19,7 +19,7 @@ onMounted(async () => {
   currentCampaign.value = fetchedCampaign ?? null;
 });
 
-const onSubmit = async (formValues) => {
+const onSubmit = async (formValues: CampaignUpdate) => {
   const campaign: CampaignUpdate = {
     ...formValues,
     is_approved: false,
@@ -37,6 +37,7 @@ const onSubmit = async (formValues) => {
 
 <template>
   <CampaignForm
+    v-if="currentCampaign"
     :isLoading="isLoading"
     :onSubmit="onSubmit"
     submitLabel="Save Campaign"

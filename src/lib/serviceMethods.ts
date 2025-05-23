@@ -37,6 +37,7 @@ export const withFilter = <T>(table: string) => ({
 });
 
 export const withCreate = <T, Insert>(table: string) => ({
+  // @ts-expect-error Ignore due to return type
   create: (data: Insert) => safeApi<T>(supabase.from(table).insert(data).select()),
 });
 

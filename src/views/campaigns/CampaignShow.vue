@@ -30,7 +30,9 @@ const isOwnCampaign = computed(
   () => campaign.value && authStore.userId && campaign.value.id === userId.value,
 );
 const canEdit = computed(() => isOwnCampaign.value || authStore.isAdmin || authStore.isSuperAdmin);
-const placeholderImage = computed(() => `https://placehold.co/600x400?text=${campaign.value.name}`);
+const placeholderImage = computed(
+  () => `https://placehold.co/600x400?text=${campaign.value?.name}`,
+);
 
 const getCampaign = async () => {
   const fetchedCampaign = await getCampaignById(campaignId.value);
