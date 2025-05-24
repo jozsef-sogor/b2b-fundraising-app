@@ -7,12 +7,18 @@ import "./index.css";
 import App from "./App.vue";
 import router from "./router";
 
-const app = createApp(App);
+// Wrapped in function because top level await is not available
+// in every env
+const init = async () => {
+  const app = createApp(App);
 
-app.use(createPinia());
+  app.use(createPinia());
 
-const authStore = useAuthStore();
-await authStore.getSession();
+  const authStore = useAuthStore();
+  await authStore.getSession();
 
-app.use(router);
-app.mount("#app");
+  app.use(router);
+  app.mount("#app");
+}
+
+init();
