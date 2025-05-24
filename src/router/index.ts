@@ -108,7 +108,7 @@ const routes = [
   },
   {
     path: "/auth",
-    component: () => AuthLayout,
+    component: AuthLayout,
     children: [
       {
         path: "",
